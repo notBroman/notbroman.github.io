@@ -4,7 +4,6 @@
 
 layout: home
 title: Index
-permalink: /index/
 ---
 
 Nothing to see here

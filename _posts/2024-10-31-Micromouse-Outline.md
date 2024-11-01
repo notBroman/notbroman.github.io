@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Robotic Mouse Project Outline
+
+permalink: robotic-mouse-outline
 ---
 
 # Timeline
