@@ -35,7 +35,7 @@ permalink: /:title/
 markdown: kramdown
 paginate: 5
 paginate_path: "/:num/"
-date_format: "%-d %b, %Y"
+date_format: "%b %-d, %Y"
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
 # Exclude from processing.
 # The following items will not be processed, by default.
