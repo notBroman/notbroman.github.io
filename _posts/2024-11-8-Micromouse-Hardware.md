@@ -25,6 +25,7 @@ Using this is more precise and versatile than counting the steps of the motor en
 The [MPU-6050](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf) IC was chosen as the IMU, combining a gyroscope and an accelerometer.
 This IC is can be controller using the common I2C protocol which is widely supported and including the ESP32C3.
 
+![IMU](media/MicroMouse-sensing_module.svg)
 
 # Infrared Time of Flight distance sensor
 
@@ -45,6 +46,7 @@ With this the distance travelled can be calculated, and the position can be esti
 For this the angle given by the IMU needs to be taken into account.
 In a pinch the angle can be calculated from the distance travelled by each wheel, but there is higher uncertainty in this than using a dedicated IMU.
 
+![motor dirver](media/MicroMouse-motor_module.svg)
 
 # Power delivery
 
@@ -56,6 +58,7 @@ The one cell LiPo battery delivers 3.7V, while the DC motors used need 6V a boos
 The motors max current being 1A when they stall requires the splitting into high and low power ground where everything that is connected to the 6V line should be connected to high power ground.
 All the 3.3V circuitry is on its own ground connected to the battery and MCU ground.
 
+![power delivery circuit](media/MicroMouse-power_module.svg)
 
 # PCB
 
