@@ -19,7 +19,8 @@ Other options like the ESP32S2 expand the GPIO capabilities in case more sensors
 
 The inertial measurement unit is placed on the PCB.
 It helps with discerning pose of the robot, it serves the same purpose as the inner ear does for humans.
-Using this is more precise and versatile than counting the steps of the motor encoders.
+Using this is more precise and versatile than counting the steps of the motor encoders and calculating the angle from the distance each wheel travelled.
+
 
 The [MPU-6050](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf) IC was chosen as the IMU, combining a gyroscope and an accelerometer.
 This IC is can be controller using the common I2C protocol which is widely supported and including the ESP32C3.
@@ -42,6 +43,7 @@ This combined with the 50:1 gear ratio of the drive train attached to the motor 
 For odometry the fact that 50 hall effect sensor pulses equal 1 full rotation of the wheel is used.
 With this the distance travelled can be calculated, and the position can be estimated.
 For this the angle given by the IMU needs to be taken into account.
+In a pinch the angle can be calculated from the distance travelled by each wheel, but there is higher uncertainty in this than using a dedicated IMU.
 
 
 # Power delivery
