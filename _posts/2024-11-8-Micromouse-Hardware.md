@@ -48,6 +48,20 @@ In a pinch the angle can be calculated from the distance travelled by each wheel
 
 ![motor dirver](media/MicroMouse-motor_module.svg)
 
+The motor driver used is a standard [L293D](https://www.ti.com/product/L293D) with [NAND gates](https://www.ti.com/lit/ds/symlink/sn7400.pdf?ts=1731168774987&ref_url=https%253A%252F%252Fwww.mouser.fr%252F) between the inputs and the EN pins of the driver.
+This enables combinations of the inputs to be used to enable/disable the motor driver, which can be used for free running stop and slow breaking by the driver.
+
+
+| A | B | EN (A NAND B)| Functionality |
+|---|---|-----|---------------|
+| 1 | 1 | 0 | Free-running motor stop |
+| 0 | 1 | 1 | Turn right |
+| 1 | 0 | 1 | Turn left |
+| 0 | 0 | 1 | Fast motor stop |
+
+This table shows how the motor is turning bepending on A and B.
+Using the NAND gate is a cheese for using the available inputs for more functionality and reduces the number of GPIO pins needed.
+
 # Power delivery
 
 A LiPo battery is used to power the whole system.
@@ -57,8 +71,17 @@ This necessitates a LiPo charging IC and an under/overcharge protection IC.
 The one cell LiPo battery delivers 3.7V, while the DC motors used need 6V a boost converter is needed.
 The motors max current being 1A when they stall requires the splitting into high and low power ground where everything that is connected to the 6V line should be connected to high power ground.
 All the 3.3V circuitry is on its own ground connected to the battery and MCU ground.
+Another important thing to keep in mind is that the battery needs to be able supply the max current the system (in this case mostly the motor) uses.
 
 ![power delivery circuit](media/MicroMouse-power_module.svg)
+
+For the boost converter I have coloured the different nodes to make the component placement easier.
+Since this is a switching keeping the feedback and switching loop as small as possible is really important.
+Shout out to [Phil's Lab](https://www.youtube.com/watch?v=1g-D8T65SJU) for making a video on boost converter layout and component sizing, I would have struggled a lot more without these videos.
+
+To avoid dealing with charging and powering the robot at the same time I've added a p-channel MOSFET and a On/Off switch in series.
+The MOSFET automatically disconnects the boost converter from the battery when it is charged.
+Additionally, the switch enables turing the robot on and off.
 
 # PCB
 
