@@ -3,6 +3,8 @@ laout: page
 title: Robotic Mouse Hardware Platform
 
 permalink: robotic-mouse-hardware
+
+tag: robotic mouse
 ---
 
 # Microcontroller
@@ -106,4 +108,11 @@ Replacing the IR ToF distance sensing module with sets of IR LEDs and Phototrans
 This would simplify the programming since it eliminates an I2C device and replaces it with analog inputs from the phototransistors.
 The downside of this approach is the need for additional GPIO pins for the IR LED triggering and transistor inputs.
 An example design of this is given on the [UKMARS](https://ukmars.org/projects/ukmarsbot/reference-guide/ukmarsbot-wall-sensor-basic/) website.
+
+# Version 2
+
+There are already some improvements I want to make for the second version.
+
+## Directly mounting the MCU
+
 
