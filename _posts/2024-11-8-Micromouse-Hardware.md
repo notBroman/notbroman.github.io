@@ -113,6 +113,28 @@ An example design of this is given on the [UKMARS](https://ukmars.org/projects/u
 
 There are already some improvements I want to make for the second version.
 
-# Directly mounting the MCU
+# MCU
+
+Instead of using a dev board that contains the MCU I want to mount the MCU directly on the board.
+Additionally, an upgrade for the MCU is needed to account for more needed GPIO pins.
+I will still stay with the Espressif family of chips, but an ESP32S3 will be better suited then the currenct ESP32C3.
+I'm not sure yet if I want the PCB antenna or not.
 
 
+# Miniturisation
+
+The [rules](https://ukmars.org/contests/contest-rules/micromouse-classic/) for the full sized Micromouse contest state that the size of each cell should be 16,8 x 16,8 cm^2 inside the walls.
+This gives a spacing of the edges of the diagonals at 11,8 cm for the full sized competition.
+If the mouse is wider than that it won't be able to cut straight through the zig-zag sections, this is an optimisation and not the first priority.
+However, it is nice to have the option without having to redesign the hardware.
+
+# Updating Sensing Modules
+
+I will change from using a range finder to 3 sets of IR-LEDs and IR-Phototransistors.
+
+
+# JTAG port
+
+With the MCU directly mounted on the PCB, a different way of programming it needs to be found.
+This way is the JTAG (Joint Tag Action Group) interface, it's a very common connector in industry, therefore it'd be good to know how to use it.
+Additionally, if I can avoid putting a USB port on the board I will.
