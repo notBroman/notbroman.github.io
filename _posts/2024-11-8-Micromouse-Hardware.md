@@ -131,6 +131,7 @@ However, it is nice to have the option without having to redesign the hardware.
 # Updating Sensing Modules
 
 I will change from using a range finder to 3 sets of IR-LEDs and IR-Phototransistors.
+Cross-talk is still an issue with this setup.
 
 
 # JTAG port
@@ -138,3 +139,4 @@ I will change from using a range finder to 3 sets of IR-LEDs and IR-Phototransis
 With the MCU directly mounted on the PCB, a different way of programming it needs to be found.
 This way is the JTAG (Joint Tag Action Group) interface, it's a very common connector in industry, therefore it'd be good to know how to use it.
 Additionally, if I can avoid putting a USB port on the board I will.
+The benefit of begin able to debug it as it is running is also a nice plus.
