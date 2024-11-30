@@ -11,7 +11,7 @@ permalink: robotic-mouse-outline
 |---------|-----------|--------------|
 | Complete | Oct 2024  | Design and order the first prototype PCB |
 | In Progress   | Nov 2024 | Debugging of PCB |
-| In Progress   | Nov 2024 | CAD design of mouse |
+| v2 printing    | Nov 2024 | CAD design of mouse |
 |    | Dec 2024 | Programming robot |
 |    | Jan 2025 | Uni club competition |
 
